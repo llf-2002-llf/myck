@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.sp.app.dao.Backend_userDao">
+
+     <resultMap type="Backend_user" id="BaseResultMap">
+         <id property="id" column="id"/>
+         <result property="userCode" column="userCode"/>
+         <result property="userName" column="userName"/>
+         <result property="userType" column="userType"/>
+         <result property="createdBy" column="createdBy"/>
+         <result property="creationDate" column="creationDate"/>
+         <result property="modifyBy" column="modifyBy"/>
+         <result property="modifyDate" column="modifyDate"/>
+         <result property="userPassword" column="userPassword"/>
+     </resultMap>
+     
+     <resultMap type="Backend_user" id="FullResultMap" extends="BaseResultMap">
+         <association property="dd" javaType="Data_dictionary" resultMap="cn.sp.app.dao.Data_dictionaryDao.BaseResultMap"></association>
+     </resultMap>
+     
+     <select id="login" resultMap="FullResultMap">
+     	select * from backend_user b inner join data_dictionary d on b.userType = d.id where b.userCode = #{userCode} and b.userPassword = #{userPassword}
+     </select>
+</mapper>

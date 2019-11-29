@@ -18,13 +18,12 @@ public class Backend_userController {
 	private Backend_userService bs;
 	
 	@RequestMapping("/login")
-	public String login(String userCode,String userPassword,Data_dictionary dd,HttpSession session){
-		Backend_user bu = bs.login(userCode, userPassword, dd);
+	public String login(String userCode,String userPassword,HttpSession session){
+		Backend_user bu = bs.login(userCode, userPassword);
 		if(bu != null){
-			session.setAttribute("userCode", userCode);
+			session.setAttribute("userCode", bu.getUserCode());
 			session.setAttribute("userName", bu.getUserName());
-			session.setAttribute("valueName", dd.getValueName());
-			System.out.println(dd);
+			session.setAttribute("valueName", bu.getDd().getValueName());
 			return "backend/main";
 		}else {
 			session.setAttribute("error", "用户名或密码错误！");
@@ -35,7 +34,7 @@ public class Backend_userController {
 	@RequestMapping("/logout")
 	public String logout(HttpSession session){
 		session.invalidate();
-		return "backendlogin";
+		return "redirect:/index.jsp";
 	}
 	
 	@RequestMapping("/cho")

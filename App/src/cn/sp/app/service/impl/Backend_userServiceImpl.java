@@ -16,7 +16,7 @@ public class Backend_userServiceImpl implements Backend_userService {
 	private Backend_userDao bd;
 	
 	@Override
-	public Backend_user login(String userCode, String userPassword,Data_dictionary dd) {
-		return bd.login(userCode, userPassword, dd);
+	public Backend_user login(String userCode, String userPassword) {
+		return bd.login(userCode, userPassword);
 	}
 }

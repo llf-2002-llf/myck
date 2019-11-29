@@ -21,7 +21,7 @@ public class Dev_userController {
 		Dev_user du = ds.login(devCode, devPassword);
 		if(du != null){
 			session.removeAttribute("error");
-			session.setAttribute("devCode", devCode);
+			session.setAttribute("devCode", du.getDevCode());
 			session.setAttribute("devName", du.getDevName());
 			return "developer/main";
 		}else {
@@ -33,11 +33,16 @@ public class Dev_userController {
 	@RequestMapping("/logout")
 	public String logout(HttpSession session){
 		session.invalidate();
-		return "devlogin";
+		return "redirect:/index.jsp";
 	}
 	
 	@RequestMapping("/cho")
 	public String choice(){
 		return "devlogin";
+	}
+	
+	@RequestMapping("/vindicate")
+	public String vindicate(){
+		return "developer/appinfolist";
 	}
 }

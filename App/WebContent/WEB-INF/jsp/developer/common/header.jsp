@@ -55,7 +55,7 @@
 						</div>
 						<div class="profile_info">
 							<span>Welcome,</span>
-							<h2>${devCode }</h2>
+							<h2>${devUserSession.devCode }</h2>
 						</div>
 					</div>
 					<!-- /menu profile quick info -->
@@ -66,7 +66,7 @@
 					<div id="sidebar-menu"
 						class="main_menu_side hidden-print main_menu">
 						<div class="menu_section">
-							<h3>${devName }</h3>
+							<h3>${devUserSession.devName }</h3>
 							<ul class="nav side-menu">
 								<li><a><i class="fa fa-home"></i> APP账户管理 <span
 										class="fa fa-chevron-down"></span>
@@ -81,7 +81,7 @@
 										class="fa fa-chevron-down"></span>
 								</a>
 									<ul class="nav child_menu">
-										<li><a href="${pageContext.request.contextPath }/dev/vindicate.do">APP维护</a>
+										<li><a href="${pageContext.request.contextPath }/dev/flatform/app/list">APP维护</a>
 										</li>
 									</ul></li>
 							</ul>
@@ -100,7 +100,7 @@
 						</a> <a data-toggle="tooltip" data-placement="top" title="Lock"> <span
 							class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
 						</a> <a data-toggle="tooltip" data-placement="top" title="Logout"
-							href="${pageContext.request.contextPath }/dev/logout.do"> <span
+							href="${pageContext.request.contextPath }/dev/logout"> <span
 							class="glyphicon glyphicon-off" aria-hidden="true"></span> </a>
 					</div>
 					<!-- /menu footer buttons -->
@@ -125,7 +125,7 @@
 									class=" fa fa-angle-down"></span> </a>
 								<ul class="dropdown-menu dropdown-usermenu pull-right">
 									<li><a
-										href="${pageContext.request.contextPath }/dev/logout.do"><i
+										href="${pageContext.request.contextPath }/dev/logout"><i
 											class="fa fa-sign-out pull-right"></i> Log Out</a>
 									</li>
 								</ul></li>

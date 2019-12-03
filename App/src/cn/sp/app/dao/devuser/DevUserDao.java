@@ -1,4 +1,4 @@
-package cn.sp.app.dao;
+package cn.sp.app.dao.devuser;
 
 import org.apache.ibatis.annotations.Param;
 import cn.sp.app.entity.DevUser;

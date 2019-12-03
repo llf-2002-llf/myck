@@ -6,7 +6,7 @@ import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
 
-import cn.sp.app.dao.DataDictionaryDao;
+import cn.sp.app.dao.datadictionary.DataDictionaryDao;
 import cn.sp.app.entity.DataDictionary;
 
 @Service

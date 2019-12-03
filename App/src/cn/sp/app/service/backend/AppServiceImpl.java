@@ -3,7 +3,8 @@ package cn.sp.app.service.backend;
 import java.util.List;
 import javax.annotation.Resource;
 import org.springframework.stereotype.Service;
-import cn.sp.app.dao.AppInfoDao;
+
+import cn.sp.app.dao.appinfo.AppInfoDao;
 import cn.sp.app.entity.AppInfo;
 
 @Service

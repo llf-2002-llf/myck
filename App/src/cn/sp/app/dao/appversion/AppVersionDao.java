@@ -1,4 +1,4 @@
-package cn.sp.app.dao;
+package cn.sp.app.dao.appversion;
 
 import java.util.List;
 

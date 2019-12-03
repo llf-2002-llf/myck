@@ -3,7 +3,7 @@ package cn.sp.app.service.developer;
 import javax.annotation.Resource;
 import org.springframework.stereotype.Service;
 
-import cn.sp.app.dao.DevUserDao;
+import cn.sp.app.dao.devuser.DevUserDao;
 import cn.sp.app.entity.DevUser;
 
 @Service

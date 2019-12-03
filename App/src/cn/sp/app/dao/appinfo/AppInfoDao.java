@@ -1,4 +1,4 @@
-package cn.sp.app.dao;
+package cn.sp.app.dao.appinfo;
 
 import java.util.List;
 import org.apache.ibatis.annotations.Param;

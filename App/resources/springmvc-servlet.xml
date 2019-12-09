@@ -12,7 +12,7 @@
         http://www.springframework.org/schema/mvc
         http://www.springframework.org/schema/mvc/spring-mvc.xsd">
         
-   <context:component-scan base-package="cn.appsys.controller"/>
+   <context:component-scan base-package="cn.sp.app.controller"/>
    
    <mvc:annotation-driven>
    		<mvc:message-converters>
@@ -67,7 +67,7 @@
 		<mvc:interceptor>
 			<mvc:mapping path="/manager/backend/**"/>
 			<mvc:mapping path="/dev/flatform/**"/>
-			<bean class="cn.appsys.interceptor.SysInterceptor"/>
+			<bean class="cn.sp.app.interceptor.SysInterceptor"/>
 		</mvc:interceptor>
 		
 	</mvc:interceptors>

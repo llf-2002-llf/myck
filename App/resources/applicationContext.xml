@@ -12,8 +12,8 @@
                 http://www.springframework.org/schema/context 
                 http://www.springframework.org/schema/context/spring-context.xsd">  
                 
-    <context:component-scan base-package="cn.appsys.service"/> 
-    <context:component-scan base-package="cn.appsys.dao"/> 
+    <context:component-scan base-package="cn.sp.app.service"/> 
+    <context:component-scan base-package="cn.sp.app.dao"/> 
     <context:annotation-config />
    	<context:property-placeholder location="classpath:database.properties"/>
     <!-- JNDI获取数据源(使用dbcp连接池) -->  
@@ -37,18 +37,18 @@
  	
  	<aop:aspectj-autoproxy/>
       <aop:config proxy-target-class="true">
-      	<aop:pointcut expression="execution(* *cn.appsys.service..*(..))" id="transService"/>
+      	<aop:pointcut expression="execution(* *cn.sp.app.service..*(..))" id="transService"/>
       	<aop:advisor advice-ref="myAdvice" pointcut-ref="transService"/>
       </aop:config>
       
  	<tx:advice id="myAdvice" transaction-manager="txManager">  
     	<tx:attributes>  
-	        <tx:method name="appsys*"  propagation="REQUIRED" rollback-for="Exception"  />
+	        <tx:method name="sp.app*"  propagation="REQUIRED" rollback-for="Exception"  />
 	        <tx:method name="*" />
     	</tx:attributes>  
  	</tx:advice>
     
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-    	<property name="basePackage" value="cn.appsys.dao"/>
+    	<property name="basePackage" value="cn.sp.app.dao"/>
     </bean>       
 </beans>

@@ -496,6 +496,7 @@ public class AppController {
 		String fileLocPath = null;
 		if(flag == null || flag.equals("") ||
 			id == null || id.equals("")){
+			System.out.println("11111111111111111");
 			resultMap.put("result", "failed");
 		}else if(flag.equals("logo")){
 			try {

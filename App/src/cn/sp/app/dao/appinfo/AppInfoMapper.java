@@ -35,30 +35,10 @@ public interface AppInfoMapper {
 
 	public int deleteAppLogo(@Param(value="id")Integer id)throws Exception;
 	
-	/**
-	 * 根据appId，更新最新versionId
-	 * @param versionId
-	 * @param appId
-	 * @return
-	 * @throws Exception
-	 */
 	public int updateVersionId(@Param(value="versionId")Integer versionId,@Param(value="id")Integer appId)throws Exception;
 	
-	/**
-	 * updateSaleStatusByAppId
-	 * @param appId
-	 * @return
-	 * @throws Exception
-	 */
 	public int updateSaleStatusByAppId(@Param(value="id")Integer appId) throws Exception;
 
-	/*
-	 * 更新app状态
-	 * @param status
-	 * @param id
-	 * @return
-	 * @throws Exception
-	 */
 	public int updateSatus(@Param(value="status")Integer status,@Param(value="id")Integer id)throws Exception;
 
 }
